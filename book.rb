@@ -66,15 +66,15 @@ class Book
       isbn: isbn,
       weight: weight,
       language: language,
+      authors: authorList,
       publisher: publisher,
       edition: edition,
       year: year,
       month: month,
+      dimensions: dimensions,
       rating: rating,
       stock: stock,
-      tags: tagList,
-      authors: authorList,
-      dimensions: dimensions
+      tags: tagList
     }
   end
 
