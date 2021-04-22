@@ -47,16 +47,15 @@ class Book
     @isbn = Faker::Code.isbn
     @weight = Faker::Number.decimal(l_digits: 3, r_digits: 2)
     @language = Faker::Nation.language
+    @authorList = authors
     @publisher = Faker::Book.publisher
     @edition = Faker::Number.between(from: 1, to: 10)
     @year = Faker::Number.between( from: 1900, to: 2021)
     @month  =  Faker::Number.between( from: 1, to: 12)
+    @dimensions = dim
     @rating = Faker::Number.between(from: 0.0, to: 5.0).round(2)
     @stock = Faker::Number.between( from: 1, to: 100000)
     @tagList = tags
-
-    @authorList = authors
-    @dimensions = dim
   end
 
   def to_hash
