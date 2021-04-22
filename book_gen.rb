@@ -35,18 +35,6 @@
 require 'thor'
 require "./book"
 
-# add_comma = false
-# print '['
-# 100.times do
-#   book = Book.new
-#   print ',' if add_comma
-#   add_comma ||= true
-#   print book.to_hash.to_json
-# end
-# puts "\n]"
-
-
-
 class BookGen < Thor
   desc "json RECORD_COUNT FILENAME", "generate book info json"
 
