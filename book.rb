@@ -1,56 +1,22 @@
-#!/usr/bin/env ruby
-
-# Expected format
-#{
-#     "title": "The Price of Admiralty: The Evolution of Naval Warfare from Trafalgar to Midway",
-#     "format": "Paperback",
-#     "pages": 400,
-#     "isbn-13": "978-0140096507",
-#     "weight": 280.66,
-#     "language": "English",
-#     "authors": [
-#         {
-#             "order": 1,
-#             "first": "John",
-#             "last": "Keegan",
-#         },
-#     ],
-#     "publisher": "Pengiun Books",
-#     "edition": 3,
-#     "year": 1990,
-#     "month": 2,
-#     "dimensions": {
-#         "length": 18,
-#         "width": 13,
-#         "depth": 2.2
-#     },
-#     "rating": 4.56,
-#     "stock": 9801,
-#     "tags": [
-#         "Naval military history", "World War I", "World War II"
-#     ]
-# }
-
 require 'faker'
-require 'json'
 
 class Author
   attr_accessor :order, :first, :last
 
   def initialize(order)
-    @order = order
-    @first = Faker::Name.first_name
-    @last = Faker::Name.last_name
+      @order = order
+      @first = Faker::Name.first_name
+      @last = Faker::Name.last_name
   end
   def to_hash
-    {
+      {
       order: order,
       last: last,
       first: first
-    }
+      }
   end
 end
-
+  
 class Dimension
   attr_accessor :length, :width, :depth
 
@@ -59,6 +25,7 @@ class Dimension
     @width = Faker::Number.between(from: 1, to: 12).round(1)
     @depth = Faker::Number.between(from: 1, to: 12).round(1)
   end
+
   def to_hash
     {
       length: length,
@@ -67,7 +34,7 @@ class Dimension
     }
   end
 end
-
+  
 class Book
   attr_accessor :title, :format, :pages, :isbn, :weight, :language,
                 :publisher, :edition, :year, :month, :rating, :stock, 
@@ -133,13 +100,3 @@ class Book
   end
 
 end
-
-add_comma = false
-print '['
-100000.times do
-  book = Book.new
-  print ',' if add_comma
-  add_comma ||= true
-  print book.to_hash.to_json
-end
-puts "\n]"
