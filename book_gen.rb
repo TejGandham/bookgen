@@ -40,7 +40,8 @@ class BookGen < Thor
 
   def json(recordCount=100, filename='books.json')
     books = []
-    recordCount.to_i.times do
+    recordCount.to_i.times do |i|
+      puts "Generated #{i+1} records" if ((i+1) % 100)  == 0
       book = Book.new
       books << book.to_hash
     end
