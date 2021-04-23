@@ -63,7 +63,7 @@ class Book
       title: title, 
       format: format, 
       pages: pages, 
-      isbn: isbn,
+      "isbn-13": isbn,
       weight: weight,
       language: language,
       authors: authorList,
