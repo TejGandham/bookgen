@@ -69,7 +69,7 @@ class Book
       authors: authorList,
       publisher: publisher,
       edition: edition,
-      year: year,
+      year: 2021,
       month: month,
       dimensions: dimensions,
       rating: rating,
