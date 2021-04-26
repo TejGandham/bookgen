@@ -21,9 +21,9 @@ class Dimension
   attr_accessor :length, :width, :depth
 
   def initialize
-    @length = Faker::Number.between(from: 1, to: 20)
-    @width = Faker::Number.between(from: 1, to: 12).round(1)
-    @depth = Faker::Number.between(from: 1, to: 12).round(1)
+    @length = Faker::Number.between(from: 1, to: 9)
+    @width = Faker::Number.between(from: 20, to: 30).round(1)
+    @depth = Faker::Number.between(from: 11, to: 18).round(1)
   end
 
   def to_hash
@@ -44,8 +44,8 @@ class Book
     @title = Faker::Book.title
     @format = randomFormat
     @pages = Faker::Number.between(from:100, to: 1000)
-    @isbn = Faker::Code.isbn
-    @weight = Faker::Number.decimal(l_digits: 3, r_digits: 2)
+    @isbn = "#{Faker::Number.number(digits: 3)}-#{Faker::Number.number(digits: 10)}"
+    @weight = Faker::Number.between(from:201, to: 800)
     @language = Faker::Nation.language
     @authorList = authors
     @publisher = Faker::Book.publisher
@@ -53,7 +53,7 @@ class Book
     @year = Faker::Number.between( from: 2020, to: 2021)
     @month  =  Faker::Number.between( from: 1, to: 12)
     @dimensions = dim
-    @rating = Faker::Number.between(from: 0.0, to: 5.0).round(2)
+    @rating = "#{Faker::Number.between(from:1, to:4)}.#{Faker::Number.between(from:1, to:9)}"
     @stock = Faker::Number.between( from: 1, to: 100000)
     @tagList = tags
   end
