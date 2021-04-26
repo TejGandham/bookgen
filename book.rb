@@ -50,7 +50,7 @@ class Book
     @authorList = authors
     @publisher = Faker::Book.publisher
     @edition = Faker::Number.between(from: 1, to: 10)
-    @year = Faker::Number.between( from: 1900, to: 2021)
+    @year = Faker::Number.between( from: 2020, to: 2021)
     @month  =  Faker::Number.between( from: 1, to: 12)
     @dimensions = dim
     @rating = Faker::Number.between(from: 0.0, to: 5.0).round(2)
