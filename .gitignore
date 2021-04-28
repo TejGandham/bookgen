@@ -1,4 +1,5 @@
 vendor
 Gemfile.lock
 *.json
-!books_all.json
+!book.json
+!books_one_hundred_thousand.json
